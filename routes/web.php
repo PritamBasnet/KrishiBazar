@@ -99,6 +99,10 @@ Route::get('/logout', function (){
     return redirect('/admin/login');
 });
 
+Route::get('/checking', function (){
+
+});
+
 // Product
 
 Route::get('/admin/dashboard/product/add',[ProductController::class,'create'])->name('product.add');
