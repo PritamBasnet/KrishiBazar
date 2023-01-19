@@ -1,0 +1,59 @@
+.foodOrdering-List
+{
+    width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 12px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+.foodOrdering-List div
+{
+    height: 100%;
+    gap: 14px;
+    display: flex;
+    align-items: center;
+}
+.foodOrdering-List div p
+{
+    color: black;
+    margin-bottom: 0;
+}
+.buttonCollector
+{
+    display: flex;
+    gap: 4px;
+    float: right !important;
+}
+.ToolTipBtnFoodOrdering
+{
+    padding: 6px 12px !important;
+}
+
+.counterCard
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 170px;
+    width: 100%;
+}
+.counterCard .h4
+{
+    color: cornflowerblue;
+}
+.backendImage
+{
+    width: 145px;
+    height: 120px;
+    object-fit: cover;
+}
+.tableContainer
+{
+    width: 95%;
+    margin: auto;
+}
+.tableContainer table 
+{
+    overflow: auto;
+}

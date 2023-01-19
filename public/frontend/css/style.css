@@ -1,0 +1,278 @@
+.row
+{
+    width: 100%;
+    margin: 0 !important;
+    overflow-x: hidden !important;
+}
+
+.header
+{
+    width: 100%;
+    height: fit-content;
+    background-color: white;
+    padding: 35px 46px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header .nav ol 
+{
+    display: flex;
+    list-style: none;
+    gap: 22px;
+
+}
+.header .nav ol li a 
+{
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+}
+.getStarted
+{
+    padding: 14px 18px;
+    border: 2px solid gainsboro;
+}
+.hamburger
+{
+    display: none;
+}
+/* Landing section design */
+.landingDesign
+{
+    width: 100%;
+    /* padding: 42px 42px; */
+}
+.landingDesign .row div
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.landingPageTitle
+{
+    font-size: 42px;
+    text-transform: capitalize;
+}
+.landingPageImage
+{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.landingPageImage div 
+{
+    width: 90%;
+    height: 520px;
+}
+.landingPageImage  div   img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+/* Main Section */
+.mainSection
+{
+    width: 100%;
+    height: 80vh;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+}
+.mainSection > .mainContent
+{
+    width: 30%;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    background-color: #eef6ef;
+}
+.mainSection > .mainContent div
+{
+    padding: 0 12px;
+    left: 10px;
+    position: absolute;
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    gap: 18px;
+    flex-direction: column;
+}
+.mainSection > .mainContent div h2
+{
+    font-size: 44px;
+    font-family: 'Roboto', sans-serif !important;
+}
+.mainSection > .mainContent div span
+{
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif !important;
+}
+.mainSection > .mainImage
+{
+    width: 70%;
+    height: 100%;
+}
+.mainSection > .mainImage > img
+{
+    height: 100%;
+    object-fit: cover;
+}
+
+.GrayBackgroundBtn
+{
+    display: inline-block;
+    padding: 18px 32px;
+    height: fit-content;
+    width: fit-content;
+    text-transform: uppercase;
+    background-color: #58b064;
+    color: white;
+    text-decoration: none;
+    transition: 0.453s ease-in;
+}
+.GrayBackgroundBtn:hover
+{
+    color: white;
+    transform: translateY(-8px);
+    box-shadow: #58b064 0px 7px 29px 0px;
+}
+.titleRow
+{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    padding: 22px 0;
+}
+.titleRow h3
+{
+    font-size: 29px;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+.cardWrapper
+{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    position: relative;
+}
+.cardWrapper a 
+{
+    position: absolute;
+    bottom: 0;
+    height: 45px;
+    width: 100%;
+    background-color: cornflowerblue;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.cardWrapper .productImage
+{
+    width: 145px;
+    height: 120px;
+
+}
+.cardWrapper .productImage img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 28px;
+}
+.cardWrapper .productContent
+{
+    padding-bottom: 34px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.cardWrapper .productContent  p 
+{
+    text-align: center;
+}
+
+/* sidebar design */
+#sidebar
+{
+    width: 240px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: cornflowerblue;
+    z-index: 4;
+    transform: translateX(240px);
+    transition: 0.3s ease-in;
+}
+#sidebar ol 
+{
+    padding: 20px 29px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+#sidebar ol li a 
+{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+.hamrClose
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 40px;
+    width: 40px;
+    background-color: red;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.blogWrapper
+{
+    width: 100%;
+    height: fit-content;
+    padding-bottom: 12px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+}
+.blogWrapper .blogImage
+{
+    width: 100%;
+    height: 260px;
+}
+.blogWrapper .blogImage img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.blogWrapper .blogContent
+{
+    padding-top: 12px;
+    padding-left: 14px;
+}

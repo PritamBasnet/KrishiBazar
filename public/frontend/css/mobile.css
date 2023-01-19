@@ -1,0 +1,11 @@
+@media screen and (max-width:900px) {
+    .nav
+    {
+        display: none !important;
+    }   
+    .hamburger
+    {
+        display: block;
+        font-size: 32px;
+    }
+}
