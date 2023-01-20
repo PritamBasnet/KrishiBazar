@@ -5,8 +5,11 @@
     <div class="menu-inner-shadow"></div>
 
     <ul class="menu-inner py-1">
+        <li class="menu-item">
+            <img style="padding: 20px 12px;" src="{{ asset('frontend/image/logo.png') }}" alt="">
+        </li>
         <!-- Dashboard -->
-        <li class="menu-item active">
+        <li class="menu-item {{ (request()->segment(2) == 'dashboard' && request()->segment(3) == "") ? "active" : "" }}">
             <a href="index.html" class="menu-link"> 
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div data-i18n="Analytics">Dashboard</div>
@@ -17,26 +20,26 @@
         <!-- Components -->
         <li class="menu-header small text-uppercase"><span class="menu-header-text">Feature</span></li>
         {{-- QR builder --}}
-        <li class="menu-item">
+        <li class="menu-item {{ (request()->segment(3) == 'category') ? "active" : "" }}">
             <a href="{{ route('category.table') }}" class="menu-link">
                 <i class="menu-icon tf-icons bi bi-card-checklist"></i>
                 <div data-i18n="Basic">Category</div>
             </a>
         </li>
-        <li class="menu-item">
+        {{-- <li class="menu-item">
             <a href="{{ route('location.table') }}" class="menu-link">
                 <i class="menu-icon tf-icons bi bi-card-checklist"></i>
                 <div data-i18n="Basic">Location</div>
             </a>
-        </li>
-        <li class="menu-item">
+        </li> --}}
+        <li class="menu-item {{ (request()->segment(3) == 'agricultureunit') ? "active" : "" }}">
             <a href="{{ route('agricultureunit.table') }}" class="menu-link">
                 <i class="menu-icon tf-icons bi bi-card-checklist"></i>
                 <div data-i18n="Basic">Agriculture Unit</div>
             </a>
         </li>
         <!-- User interface -->
-        <li class="menu-item">
+        <li class="menu-item {{ (request()->segment(3) == 'product') ? "active" : "" }}">
             <a href="javascript:void(0)" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bi bi-bucket"></i>
                 <div data-i18n="User interface">Product</div>
@@ -54,7 +57,7 @@
                 </li>
             </ul>
         </li>
-        <li class="menu-item">
+        <li class="menu-item {{ (request()->segment(3) == 'service') ? "active" : "" }}">
             <a href="javascript:void(0)" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bi bi-bucket"></i>
                 <div data-i18n="User interface">Service</div>
@@ -72,7 +75,7 @@
                 </li>
             </ul>
         </li>
-        <li class="menu-item">
+        <li class="menu-item {{ (request()->segment(3) == 'blog') ? "active" : "" }}">
             <a href="javascript:void(0)" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bi bi-bucket"></i>
                 <div data-i18n="User interface">Blog</div>

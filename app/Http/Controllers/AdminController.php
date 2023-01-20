@@ -57,4 +57,34 @@ class AdminController extends Controller
 
         }
     }
+
+    public function farmerStore(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'image' => 'required',
+            'email' => 'required',
+            'farmname' => 'required',
+            'number' => 'required',
+            'password' => 'required',
+        ]);
+        $admin = new User();
+        $admin->name = ucwords($request->name);
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $extension = $image->getClientOriginalExtension();
+            $imageName = Str::random(20) . rand(0, 999) . time() . '.' . $extension;
+            $image->move('backend/admin/images/', $imageName);
+            $admin->image = 'backend/admin/images/' . $imageName;
+        }
+        $admin->email = $request->email;
+        $admin->farmname = ucwords($request->farmname);
+        $admin->number = $request->number;
+        $admin->u_type = 'f';
+        $admin->password = Hash::make($request->password);
+        $admin->save();
+        Alert::success('register succussfully', 'login again to visit dashboard');
+        return redirect('/admin/login');
+        
+    }
 }

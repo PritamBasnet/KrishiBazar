@@ -20,10 +20,18 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @if (Auth::user()->u_type == 'a')
                     <?php 
                         $service = App\Models\Product::all();
                         
                         ?>
+                        
+                    @else
+                        <?php 
+                        $service = App\Models\Product::where('auth_id','=',Auth::user()->id)->get();
+                        
+                        ?>
+                    @endif
                         @isset($service)
                             @foreach ($service as $data)
                                 <tr>

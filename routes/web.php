@@ -10,6 +10,7 @@ use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\Frontend;
 
 
 
@@ -27,16 +28,43 @@ Route::get('/landing',function (){
     return view('frontend.landingpage');
 });
 Route::get('/', function () {
-    return view('welcome');
+    return view('frontend.index');
 });
 
+Route::get('/contact',function (){
+    return view('frontend.contact');
+});
+Route::get('/aboutus', function (){
+    return view('frontend.aboutus');
+});
+Route::get('/blogdetail', function (){
+    return view('frontend.blogdetail');
+});
+Route::get('/blog', function (){
+    return view('frontend.blog');
+});
+Route::get('/filter/page', function (){
+    return view('frontend.filterpage');
+});
+Route::get('/farmer/register', function (){
+    return view('frontend.register');
+});
+Route::get('/checkout/{id}',[Frontend::class,'orderPage']);
 
+Route::post('/farmer/store',[AdminController::class,'farmerStore']);
 // Backend Routes
 
 
 // Admin Route
 Route::get('/admin/dashboard',function (){
-    return view('backend.admin.pages.index');
+    if(Auth::check())
+    {
+        return view('backend.admin.pages.index');
+    }
+    else
+    {
+        return back();
+    }
 });
 
 //  Login And Register
@@ -47,6 +75,19 @@ Route::get('/admin/login', function (){
     return view('backend.admin.pages.login');
 });
 
+
+// Admin Registration
+Route::post('/admin/store',[AdminController::class,'store'])->name('admin.store');
+Route::post('/admin/check',[AdminController::class,'check'])->name('admin.check');
+Route::get('/logout', function (){
+    $user = Auth::user()->password;
+    Auth::logout($user);
+    Alert::success('logout succussfully', 'you got logout');
+    return redirect('/admin/login');
+});
+
+Route::middleware('adminGuard')->group(function (){
+    
 // Category Routes
 Route::get('/admin/dashboard/category/table',[CategoryController::class,'index'])->name('category.table');
 Route::post('/admin/dashboard/category/store',[CategoryController::class,'store'])->name('category.store');
@@ -88,22 +129,10 @@ Route::get('/admin/dashboard/blog/delete/{id}',[BlogController::class,'destroy']
 Route::get('/admin/dashboard/blog/edit/{id}',[BlogController::class,'edit'])->name('blog.edit');
 Route::post('/admin/dashboard/blog/update/{id}',[BlogController::class,'update'])->name('blog.update');
 
-
-// Admin Registration
-Route::post('/admin/store',[AdminController::class,'store'])->name('admin.store');
-Route::post('/admin/check',[AdminController::class,'check'])->name('admin.check');
-Route::get('/logout', function (){
-    $user = Auth::user()->password;
-    Auth::logout($user);
-    Alert::success('logout succussfully', 'you got logout');
-    return redirect('/admin/login');
 });
 
-Route::get('/checking', function (){
-
-});
-
-// Product
+Route::middleware('farmerGuard')->group(function (){
+    // Product
 
 Route::get('/admin/dashboard/product/add',[ProductController::class,'create'])->name('product.add');
 Route::get('/admin/dashboard/product/table',[ProductController::class,'index'])->name('product.table');
@@ -111,3 +140,6 @@ Route::post('/admin/dashboard/product/store',[ProductController::class,'store'])
 Route::get('/admin/dashboard/product/delete/{id}',[ProductController::class,'destroy'])->name('product.delete');
 Route::get('/admin/dashboard/product/edit/{id}',[ProductController::class,'edit'])->name('product.edit');
 Route::post('/admin/dashboard/product/update/{id}',[ProductController::class,'update'])->name('product.update');
+
+
+});
