@@ -8,6 +8,7 @@ use App\Models\Product;
 class ProductFilter extends Component
 {
     public $product,$categoryFilter = [],$fromPrice,$toPrice;
+    public $className = null;
     public function render()
     {
         $this->productShow();
@@ -28,12 +29,26 @@ class ProductFilter extends Component
         //     $this->product = Product::where('price','<=',$this->toPrice)->get();
         // }
         if($this->fromPrice != null)
-        {
+        {  
+            // $this->product = (int)$this->product;
             $this->product = Product::where('price','>',$this->fromPrice)->get();
         }
         if($this->categoryFilter == null && $this->fromPrice == null)
         {
             $this->product = Product::all();
         }
+    }
+
+    public function classActive()
+    {
+        if($this->className == null)
+        {
+            $this->className = "filterSidebarActive";
+        }
+        else
+        {
+            $this->className = null;
+        }
+        
     }
 }

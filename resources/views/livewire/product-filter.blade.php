@@ -1,5 +1,10 @@
 <div>
-    <div class="filterSidebar">
+    <div class="row" style="display: flex;justify-content:end;">
+        <div class="mb-3" style="display: flex;justify-content:end;">
+            <button class="GrayBackgroundBtn" style="height: 45px;width:140px;display:flex;justify-content:center; align-items:center;font-size:12px;" wire:click="classActive">Filter Open</button>
+        </div>
+    </div>
+    <div class="filterSidebar {{ $className }}">
         <div class="row">
             <h6 class="h6">Category</h6>
             <div style="padding-left: 18px;">
@@ -19,14 +24,9 @@
             </div>
             <div class="row" style="padding: 0 !important;">
                 <label for="" style="padding-top: 15px;">Price (Rs)</label>
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <div class="mb-3">
                         <input type="number" class="form-control" wire:model="fromPrice" id="exampleFormControlInput1" placeholder="From Rs">
-                      </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="mb-3">
-                        <input type="text" class="form-control" wire:model="toPrice" id="exampleFormControlInput1" placeholder="To Rs">
                       </div>
                 </div>
             </div>

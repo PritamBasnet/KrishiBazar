@@ -15,7 +15,7 @@ class ProductShow extends Component
     }
     public function products()
     {
-        $this->product =  Product::all();
+    $this->product =  Product::where('is_fertilizer','=',0)->get();
     }
 
     public function addToCart()

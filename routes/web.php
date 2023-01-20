@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\Frontend;
+use App\Http\Controllers\OrderController;
 
 
 
@@ -24,9 +25,9 @@ use App\Http\Controllers\Frontend;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/landing',function (){
-    return view('frontend.landingpage');
-});
+// Route::get('/landing',function (){
+//     return view('frontend.landingpage');
+// });
 Route::get('/', function () {
     return view('frontend.index');
 });
@@ -37,12 +38,16 @@ Route::get('/contact',function (){
 Route::get('/aboutus', function (){
     return view('frontend.aboutus');
 });
-Route::get('/blogdetail', function (){
-    return view('frontend.blogdetail');
-});
+// Route::get('/blogdetail', function (){
+//     return view('frontend.blogdetail');
+// });
 Route::get('/blog', function (){
     return view('frontend.blog');
 });
+Route::get('/checkout/{id}',[Frontend::class,'checkOut']);
+Route::get('/blog/detail/{id}',[Frontend::class,'blogDetail']);
+Route::get('/service/detail/{id}',[Frontend::class,'serviceDetail']);
+Route::get('/product/detail/{id}',[Frontend::class,'productDetail']);
 Route::get('/filter/page', function (){
     return view('frontend.filterpage');
 });
@@ -86,6 +91,8 @@ Route::get('/logout', function (){
     return redirect('/admin/login');
 });
 
+Route::post('/order/store',[OrderController::class,'store'])->name('order.store');
+Route::get('/admin/dashboard/order/table',[OrderController::class,'index'])->name('order.table');
 Route::middleware('adminGuard')->group(function (){
     
 // Category Routes

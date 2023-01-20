@@ -19,7 +19,6 @@
         <!-- Layouts -->
         <!-- Components -->
         <li class="menu-header small text-uppercase"><span class="menu-header-text">Feature</span></li>
-        {{-- QR builder --}}
         <li class="menu-item {{ (request()->segment(3) == 'category') ? "active" : "" }}">
             <a href="{{ route('category.table') }}" class="menu-link">
                 <i class="menu-icon tf-icons bi bi-card-checklist"></i>
@@ -92,6 +91,12 @@
                     </a>
                 </li>
             </ul>
+        </li>
+        <li class="menu-item {{ (request()->segment(3) == 'order') ? "active" : "" }}">
+            <a href="{{ route('order.table') }}" class="menu-link">
+                <i class="menu-icon tf-icons bi bi-card-checklist"></i>
+                <div data-i18n="Basic">Order</div>
+            </a>
         </li>
     </ul>
 </aside>

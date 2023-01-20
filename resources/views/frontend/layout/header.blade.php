@@ -7,13 +7,10 @@
     </div>
     <nav class="nav">
         <ol>
-            <li><a href="">Home</a></li>
-            <li><a href="">Farmer</a></li>
-            <li><a href="">Product</a></li>
-            <li><a href="">Shop</a></li>
-            <li><a href="">Contact</a></li>
-            <li><a href="">About Us</a></li>
-            <li><a href="" class="getStarted">Get Started</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/filter/page">Shop</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/aboutus">About Us</a></li>
         </ol>
     </nav>
     <div class="hamburger" onclick="sidebarOpen()">

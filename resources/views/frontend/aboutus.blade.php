@@ -65,9 +65,7 @@
                         <img src="{{ asset('frontend/image/leaf.png') }}" alt="">
                         <span></span>
                     </div>
-                    <p class="para">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus odit omnis nulla
-                        libero ducimus quod illo, recusandae fugit reprehenderit iste, ut asperiores consequatur sequi nisi
-                        impedit architecto voluptate delectus id?</p>
+                    <p class="para">Agriculture in the marketplace refers to the sale and purchase of agricultural products and services, including crops, fertilizers and other related products. This type of system usually takes place in agricultural markets, which are physical locations where farmers, vendors, and other agricultural producers come together to exchange goods and services. Krishi Bajar is marketplace web system which serves the farmers may benefits and convienient ways . Connecting Local Farmers with tech: An Online Agricultural Marketplace for business.It can also involve the sale of agricultural inputs, such as fertilizer and feed, as well as the sale of processed and packaged agricultural products, such as canned fruits and vegetables.</p>
                     <a href="" class="GrayBackgroundBtn">Read More</a>
                 </div>
             </div>

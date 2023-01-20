@@ -7,13 +7,12 @@
             style="background-image: url('https://images.unsplash.com/photo-1523741543316-beb7fc7023d8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8ZmFybWluZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60')">
             <span></span>
             <div>
-                <h2>The Hearth of the Farm
+                <h2>The Heart of the Farm
                     <br>
                     Is True Center Of The Universe
                 </h2>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id nulla laborum quisquam reprehenderit cum
-                    quae obcaecati sequi quaerat dolorum commodi!</p>
-                <a href="/farmer/register" class="GrayBackgroundBtn" >Be a seller</a>
+                <p>It can also involve the sale of agricultural inputs, such as fertilizer and feed, as well as the sale of processed and packaged agricultural products, such as canned fruits and vegetables.</p>
+                <a href="/farmer/register" class="GrayBackgroundBtn">Be a seller</a>
             </div>
         </div>
     </section>
@@ -64,15 +63,13 @@
                     <span class="grayish">About us</span>
                     <div>
                         <h1 style="color: #58b064;">Let Us</h1>
-                        <h1>Let You Tell Our Story</h1>
+                        <h1> Tell Our Story</h1>
                     </div>
                     <div class="icon-stylish">
                         <img src="{{ asset('frontend/image/leaf.png') }}" alt="">
                         <span></span>
                     </div>
-                    <p class="para">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus odit omnis
-                        nulla libero ducimus quod illo, recusandae fugit reprehenderit iste, ut asperiores consequatur
-                        sequi nisi impedit architecto voluptate delectus id?</p>
+                    <p class="para">Krishi Bajar is marketplace web system which serves the farmers may benefits and convienient ways . Connecting Local Farmers with tech: An Online Agricultural Marketplace for business.It can also involve the sale of agricultural inputs, such as fertilizer and feed, as well as the sale of processed and packaged agricultural products, such as canned fruits and vegetables.</p>
                     <a href="" class="GrayBackgroundBtn">Read More</a>
                 </div>
             </div>
@@ -102,7 +99,48 @@
         </div>
     </div>
     <livewire:product-show />
-
+    <div class="row" style="display: flex;justify-content:center;align-items:center;">
+        <div class="stylishTitleRow"
+            style="display: flex; width:fit-content; height:fit-content;:center;align-items:center;">
+            <span class="grayish">FERTILIZER PRODUCT</span>
+            <div>
+                <h1 style="color: #58b064;">Our Fertilizer</h1>
+                <h1>To Grow Crops.</h1>
+            </div>
+            <div class="icon-stylish">
+                <span></span>
+                <img src="{{ asset('frontend/image/leaf.png') }}" alt="">
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <?php
+                $fertilizer = App\Models\Product::where('is_fertilizer','=',1)->get();
+                 ?>
+            @isset($fertilizer)
+                @foreach ($fertilizer as $data)
+                    <div class="col-md-3 col-12">
+                        <div class="product-card text-center">
+                            <div class="product-img">
+                                <img src="{{ asset($data->image) }}" alt="">
+                            </div>
+                            <div class="product-icon text-center">
+                                <span>
+                                    <a href="/checkout/{{ $data->id }}" class="icon"><i class="fa-solid fa-cart-plus"></i></a>
+                                </span>
+                            </div>
+                            <div class="product-content">
+                                <a href="" class="product-name">{{ $data->name }}</a>
+                                <p class="">Rs {{ $data->price }}</p>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            @endisset
+        </div>
+    </div>
 
     <div class="row" style="display: flex;justify-content:center;align-items:center;">
         <div class="stylishTitleRow"
@@ -121,57 +159,26 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-md-4">
-                <a href="#" class="blog-link">
-                    <div class="blogWrapper">
-                        <div class="blogImage">
-                            <img src="https://images.unsplash.com/photo-1611080626919-7cf5a9dbab5b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8T3JhbmdlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
-                                alt="">
-                        </div>
-                        <div class="blogContent">
-                            <h5 class="blog-header">You must do this you must do that</h5>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, quam?</p>
-                            <a href="" class="blog-btn" style="text-decoration: none;color:black;">READ MORE</a>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-4">
-                <a href="#" class="blog-link">
-                    <div class="blogWrapper">
-                        <div class="blogImage">
-                            <img src="https://images.unsplash.com/photo-1611080626919-7cf5a9dbab5b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8T3JhbmdlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
-                                alt="">
-                        </div>
-                        <div class="blogContent">
-                            <h5 class="blog-header">You must do this you must do that</h5>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, quam?</p>
-                            <a href="" class="blog-btn" style="text-decoration: none;color:black;">READ MORE</a>
+            <?php
+            $blog = App\Models\Blog::all();
+            ?>
+            @isset($blog)
+                @foreach ($blog as $data)
+                    <div class="col-md-4">
+                        <div class="blogWrapper">
+                            <div class="blogImage">
+                                <img src="{{ asset($data->image) }}" width="100%" alt="">
+                            </div>
+                            <div class="blogContent">
+                                <h5 class="blog-header" style="color: black;">{{ $data->name}}</h5>
+                                {{-- <p style="color: white;text-overflow: ellipsis;">{!! Str::limit($data->desc,'100','....') !!}</p> --}}
+                                <a href="/blog/detail/{{ $data->id }}" class="blog-btn" style="text-decoration: none;color:black;">READ
+                                    MORE</a>
+                            </div>
                         </div>
                     </div>
-                </a>
-            </div>
-            <div class="col-md-4">
-                <a href="#" class="blog-link">
-                    <div class="blogWrapper">
-                        <div class="blogImage">
-                            <img src="https://images.unsplash.com/photo-1611080626919-7cf5a9dbab5b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8T3JhbmdlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
-                                alt="">
-                        </div>
-                        <div class="blogContent">
-                            <h5 class="blog-header">You must do this you must do that</h5>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, quam?</p>
-                            <a href="" class="blog-btn" style="text-decoration: none;color:black;">READ MORE</a>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-
-        <div class="row justify-content-end">
-            <div class="col-md-2 col-12 text-right">
-                <a href="#" ><button class="view-all-btn">View All</button></a>
-            </div>
+                @endforeach
+            @endisset
         </div>
     </div>
 
@@ -194,56 +201,24 @@
     <div class="service">
         <div class="container">
             <div class="row p-1">
-                <div class="col-md-4 col-12">
-                    <div class="card mb-2">
-                        <a href="" class="service-link">
-                            <div class="card-body text-center">
-                                <img src="https://preview.colorlib.com/theme/farmie/img/bg-img/p1.jpg" class="cardimg card-title" height="100px"
-                                    width="100px">
-                                <h5 class="card-title" style="color: black; ">Farm factory</h5>
-                                <p class="card-text" style="color: black;">Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Blanditiis
-                                    voluptatum vel rerum? Voluptates
-                                </p>
+                <?php 
+                $service = App\Models\Service::all();
+                    ?>
+                @isset($service)
+                    @foreach ($service as $data)
+                        <div class="col-md-4 col-12">
+                            <div class="card mb-2">
+                                <a href="/service/detail/{{ $data->id }}" class="service-link">
+                                    <div class="card-body text-center">
+                                        <img src="{{ asset($data->image) }}"
+                                            class="cardimg card-title" height="100px" width="100px">
+                                        <h5 class="card-title" style="color: black; ">{{ $data->name }}</h5>
+                                    </div>
+                                </a>
                             </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-4 col-12">
-                    <div class="card mb-2">
-                        <a href="" class="service-link">
-                            <div class="card-body text-center">
-                                <img src="https://preview.colorlib.com/theme/farmie/img/bg-img/p1.jpg" class="cardimg card-title" height="100px"
-                                    width="100px">
-                                <h5 class="card-title" style="color: black; ">Farm factory</h5>
-                                <p class="card-text" style="color: black;">Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Blanditiis
-                                    voluptatum vel rerum? Voluptates
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-4 col-12">
-                    <div class="card mb-2">
-                        <a href="" class="service-link">
-                            <div class="card-body text-center">
-                                <img src="https://preview.colorlib.com/theme/farmie/img/bg-img/p1.jpg" class="cardimg card-title" height="100px"
-                                    width="100px">
-                                <h5 class="card-title" style="color: black; ">Farm factory</h5>
-                                <p class="card-text" style="color: black;">Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Blanditiis
-                                    voluptatum vel rerum? Voluptates
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-end">
-                <div class="col-md-2 col-12 text-right">
-                    <a href="#" ><button class="view-all-btn">View All</button></a>
-                </div>
+                        </div>
+                    @endforeach
+                @endisset
             </div>
         </div>
     </div>

@@ -472,7 +472,7 @@ img
 }
 .product-icon{
     position: absolute;
-    bottom: 15%;
+    bottom: 25%;
     left: 42%;
     
 }
@@ -488,8 +488,8 @@ img
 }
 .icon{
     margin: 5px;
-    color: black;
-    background-color: white;
+    color: white;
+    background-color: black;
     padding: 8px 12px;
     border-radius: 50%;
     text-align: center;
@@ -710,4 +710,10 @@ h5 {
     padding-top: 20px;
     z-index: 55;
     padding-left: 12px;
+    transform: translateX(-290px);
+    transition: 0.3s ease;
+}
+.filterSidebarActive
+{
+    transform: translateX(0px) !important;
 }

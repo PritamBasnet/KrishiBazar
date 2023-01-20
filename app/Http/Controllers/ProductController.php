@@ -64,6 +64,7 @@ class ProductController extends Controller
             }
         }
         $product->category_id = $request->category_id;
+        $product->is_fertilizer = $request->is_fertilizer;
         $product->agricultureunit = $request->agricultureunit;
         $product->auth_id = Auth::user()->id;
         $product->save();
@@ -86,6 +87,7 @@ class ProductController extends Controller
             'desc' => 'required',
             'category_id' => 'required',
             'price' => 'required',
+
             'is_fertilizer' => 'required',
             'agricultureunit' => 'required',
         ]);
@@ -99,6 +101,7 @@ class ProductController extends Controller
             $product->image = 'backend/product/images/' . $imageName;
         }
         $product->desc = $request->desc;
+        $product->is_fertilizer = $request->is_fertilizer;
         $product->category_id = $request->category_id;
         if($request->discount == null)
         {

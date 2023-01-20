@@ -75,10 +75,10 @@
 <body>
     <div class="container">
         <div class="row">
-            <h1 class="blog-detail-title">How to Make Your Instagram </h1>
+            <h1 class="blog-detail-title">{{ $data->name }} </h1>
 
         </div>
-        <div class="row">
+        {{-- <div class="row">
             <ul class="nav">
                 <li class="nav-item">
                     <span class="d-flex pr-2"><i class="fa-solid fa-user user-icon"></i>
@@ -87,76 +87,14 @@
                 </li>
                 <li class="nav-item">2059-09-22</li>
             </ul>
-        </div>
+        </div> --}}
         <div class="row">
             <div class="col-md-8 col-12">
                 <div class="blog-detail-image">
-                    <img src="{{ asset('frontend/image/wheat-sack.png') }}" width="100%" alt="">
-                    <p>Instagram is one of the most popular and widely used social media platforms worldwide with
-                        around 2 billion users. The number of people using this app is insanely high and what’s
-                        crazier is that how easily you can connect and be friends with these people. As an Instagram
-                        account is by default set to private when you create an account, any one of them can follow
-                        you and befriend you on the app and see everything you share in it. But, what if you don’t
-                        like it and want some privacy? Well, worry no more because this platform also allows you to
-                        make your Instagram private.</p>
-                    <p>Instagram is one of the most popular and widely used social media platforms worldwide with
-                        around 2 billion users. The number of people using this app is insanely high and what’s
-                        crazier is that how easily you can connect and be friends with these people. As an Instagram
-                        account is by default set to private when you create an account, any one of them can follow
-                        you and befriend you on the app and see everything you share in it. But, what if you don’t
-                        like it and want some privacy? Well, worry no more because this platform also allows you to
-                        make your Instagram private.</p>
-                    <p>Instagram is one of the most popular and widely used social media platforms worldwide with
-                        around 2 billion users. The number of people using this app is insanely high and what’s
-                        crazier is that how easily you can connect and be friends with these people. As an Instagram
-                        account is by default set to private when you create an account, any one of them can follow
-                        you and befriend you on the app and see everything you share in it. But, what if you don’t
-                        like it and want some privacy? Well, worry no more because this platform also allows you to
-                        make your Instagram private.</p>
-                    <p>Instagram is one of the most popular and widely used social media platforms worldwide with
-                        around 2 billion users. The number of people using this app is insanely high and what’s
-                        crazier is that how easily you can connect and be friends with these people. As an Instagram
-                        account is by default set to private when you create an account, any one of them can follow
-                        you and befriend you on the app and see everything you share in it. But, what if you don’t
-                        like it and want some privacy? Well, worry no more because this platform also allows you to
-                        make your Instagram private.</p>
-                </div>
-            </div>
-
-
-
-            <div class="col-md-4 col-12">
-                <div class="position-stiky-side">
-                    <div class="related-blog">
-                        <h2 class="blog-realted-articla">
-                            Related Article
-                        </h2>
-                    </div>
-                    <div class="latest-blog">
-
-                        <h2 class="latest-blog-top"> <a href="#" class="latest-blog-link">How to Make Your
-                                Instagram
-                                Private? </a></h2>
-
-                        <p>2059--8-22</p>
-                        <hr>
-                    </div>
-                    <div class="latest-blog">
-
-                        <h2 class="latest-blog-top"> <a href="#" class="latest-blog-link">Instagram is one of the
-                                most popular
-                                Private? </a></h2>
-
-                        <p>2059--8-22</p>
-                        <hr>
-                    </div>
-
-
-
-                </div>
-
-
-            </div>
+                    <img src="{{ asset($data->image) }}" width="100%" alt="">
+                    <p>
+                        {!! $data->desc !!}
+                    </p>
 
         </div>
     </div>

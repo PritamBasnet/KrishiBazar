@@ -17,6 +17,7 @@
                                 <a href="" class="product-name">{{ $data->name }}</a>
                                 <p class="">Rs. {{ $data->price }}</p>
                             </div>
+                            {{-- <a href="/product/detail/{{ $data->id }}" class="text-primary">View More</a> --}}
                         </div>
                     </div>
                 @endforeach
